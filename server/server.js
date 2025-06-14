@@ -12,6 +12,10 @@ mongoose.connect('mongodb://localhost:27017/passwordResetApp', {
   useUnifiedTopology: true,
 });
 
+app.get("/", (req, res) => {
+  res.send("Server is running...");
+});
+
 app.use('/api', authRoutes);
 
 const PORT = process.env.PORT || 5000;
